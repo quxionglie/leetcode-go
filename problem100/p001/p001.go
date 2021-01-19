@@ -16,5 +16,5 @@ func twoSum(nums []int, target int) []int {
 		}
 		m[nums[i]] = i
 	}
-	return []int{}
+	return nil
 }

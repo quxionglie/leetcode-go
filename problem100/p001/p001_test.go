@@ -37,7 +37,7 @@ func TestTwoSum(t *testing.T) {
 	assert.True(t, array_sorted_equal([]int{0, 1}, out))
 
 	out = twoSum([]int{1, 3}, 6)
-	assert.True(t, array_sorted_equal([]int{}, out))
+	assert.True(t, array_sorted_equal(nil, out))
 	assert.True(t, array_sorted_equal([]int{1, 2}, []int{2, 1}))
 }
 
