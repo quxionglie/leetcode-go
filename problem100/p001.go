@@ -1,4 +1,4 @@
-package p001
+package problem100
 
 /**
 https://leetcode-cn.com/problems/two-sum/

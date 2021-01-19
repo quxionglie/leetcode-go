@@ -1,4 +1,4 @@
-package p002
+package problem100
 
 type ListNode struct {
 	Val  int

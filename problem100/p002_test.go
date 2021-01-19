@@ -1,4 +1,4 @@
-package p002
+package problem100
 
 import (
 	"github.com/stretchr/testify/assert"
