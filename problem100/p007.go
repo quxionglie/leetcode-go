@@ -19,7 +19,6 @@ import (
 // - 当 rev>INT_MAX/10,不可能再rev*10 或 rev==INT_MAX/10且pop>7
 // - 当 rev<INT_MAX/10,不可能再rev*10 或 rev==INT_MIN/10且pop<-8
 func reverse(x int) int {
-	// 321 -> 123
 	rev := 0
 	for x != 0 {
 		pop := x % 10
