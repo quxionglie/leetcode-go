@@ -1,5 +1,9 @@
 package problem100
 
+import (
+	"math"
+)
+
 // https://leetcode-cn.com/problems/reverse-integer/
 // 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
 //注意：
@@ -15,18 +19,16 @@ package problem100
 // - 当 rev>INT_MAX/10,不可能再rev*10 或 rev==INT_MAX/10且pop>7
 // - 当 rev<INT_MAX/10,不可能再rev*10 或 rev==INT_MIN/10且pop<-8
 func reverse(x int) int {
-	const INT_MAX = 2147483647
-	const INT_MIN = -2147483648
 	// 321 -> 123
 	rev := 0
 	for x != 0 {
 		pop := x % 10
 		x = x / 10
 
-		if rev > INT_MAX/10 || (rev == INT_MAX/10 && pop > 7) {
+		if rev > math.MaxInt32/10 || (rev == math.MaxInt32/10 && pop > 7) {
 			return 0
 		}
-		if rev < INT_MIN/10 || (rev == INT_MIN/10 && pop < -8) {
+		if rev < math.MinInt32/10 || (rev == math.MinInt32/10 && pop < -8) {
 			return 0
 		}
 		rev = rev*10 + pop
