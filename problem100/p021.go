@@ -16,7 +16,17 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	head = l3
 
 	for l1 != nil || l2 != nil {
-		if l1 != nil && (l2 == nil || l1.Val < l2.Val) {
+		//共享依赖现有链表
+		if l1 == nil {
+			l3.Next = l2
+			break
+		}
+		if l2 == nil {
+			l3.Next = l1
+			break
+		}
+
+		if l1.Val < l2.Val {
 			l3.Next = &ListNode{l1.Val, nil}
 			l1 = l1.Next
 		} else {
