@@ -20,6 +20,5 @@ func removeDuplicates(nums []int) int {
 			}
 		}
 	}
-	nums = nums[:pos+1]
-	return len(nums)
+	return pos + 1
 }
