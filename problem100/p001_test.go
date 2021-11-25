@@ -1,9 +1,7 @@
 package problem100
 
 import (
-	"github.com/stretchr/testify/assert"
 	"reflect"
-	"sort"
 	"testing"
 )
 
@@ -25,35 +23,26 @@ import (
 //-109 <= nums[i] <= 109
 //-109 <= target <= 109
 //只会存在一个有效答案
-func TestTwoSum(t *testing.T) {
-	var out []int
-	out = twoSum([]int{2, 7, 11, 15}, 9)
-	assert.True(t, array_sorted_equal([]int{0, 1}, out))
-
-	out = twoSum([]int{3, 2, 4}, 6)
-	assert.True(t, array_sorted_equal([]int{1, 2}, out))
-
-	out = twoSum([]int{3, 3}, 6)
-	assert.True(t, array_sorted_equal([]int{0, 1}, out))
-
-	out = twoSum([]int{1, 3}, 6)
-	assert.True(t, array_sorted_equal(nil, out))
-	assert.True(t, array_sorted_equal([]int{1, 2}, []int{2, 1}))
-}
-
-func array_sorted_equal(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
+func Test_twoSum(t *testing.T) {
+	type args struct {
+		nums   []int
+		target int
 	}
-
-	a_copy := make([]int, len(a))
-	b_copy := make([]int, len(b))
-
-	copy(a_copy, a)
-	copy(b_copy, b)
-
-	sort.Ints(a_copy)
-	sort.Ints(b_copy)
-
-	return reflect.DeepEqual(a_copy, b_copy)
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{"01", args{[]int{2, 7, 11, 15}, 9}, []int{0, 1}},
+		{"02", args{[]int{3, 2, 4}, 6}, []int{1, 2}},
+		{"03", args{[]int{3, 3}, 6}, []int{0, 1}},
+		{"04", args{[]int{1, 3}, 6}, nil},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := twoSum(tt.args.nums, tt.args.target); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("twoSum() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
