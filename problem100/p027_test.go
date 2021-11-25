@@ -1,7 +1,6 @@
 package problem100
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -16,7 +15,24 @@ import (
 输出：5, nums = [0,1,4,0,3]
 解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
 */
-func TestRemoveElement(t *testing.T) {
-	assert.Equal(t, 2, removeElement([]int{3, 2, 2, 3}, 3))
-	assert.Equal(t, 5, removeElement([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2))
+func Test_removeElement(t *testing.T) {
+	type args struct {
+		nums []int
+		val  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"", args{[]int{3, 2, 2, 3}, 3}, 2},
+		{"", args{[]int{0, 1, 2, 2, 3, 0, 4, 2}, 2}, 5},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := removeElement(tt.args.nums, tt.args.val); got != tt.want {
+				t.Errorf("removeElement() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }

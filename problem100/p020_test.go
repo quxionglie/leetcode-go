@@ -1,35 +1,29 @@
 package problem100
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-//示例 1：
-//
-//输入：s = "()"
-//输出：true
-//示例 2：
-//
-//输入：s = "()[]{}"
-//输出：true
-//示例 3：
-//
-//输入：s = "(]"
-//输出：false
-//示例 4：
-//
-//输入：s = "([)]"
-//输出：false
-//示例 5：
-//
-//输入：s = "{[]}"
-//输出：true
-//
-func TestIsValid(t *testing.T) {
-	assert.True(t, isValid("()"))
-	assert.True(t, isValid("()[]{}"))
-	assert.False(t, isValid("(]"))
-	assert.False(t, isValid("([)]"))
-	assert.True(t, isValid("{[]}"))
+func Test_isValid(t *testing.T) {
+	type args struct {
+		s string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{"", args{"()"}, true},
+		{"", args{"()[]{}"}, true},
+		{"", args{"(]"}, false},
+		{"", args{"([)]"}, false},
+		{"", args{"{[]}"}, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isValid(tt.args.s); got != tt.want {
+				t.Errorf("isValid() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }

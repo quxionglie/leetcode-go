@@ -1,7 +1,6 @@
 package problem100
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -18,10 +17,27 @@ import (
 输入：haystack = "", needle = ""
 输出：0
 */
-func TestStrStr(t *testing.T) {
-	assert.Equal(t, 2, strStr("hello", "ll"))
-	assert.Equal(t, -1, strStr("aaaaa", "bba"))
-	assert.Equal(t, 0, strStr("", ""))
-	assert.Equal(t, -1, strStr("aaa", "aaaa"))
-	assert.Equal(t, -1, strStr("mississippi", "issipi"))
+func Test_strStr(t *testing.T) {
+	type args struct {
+		haystack string
+		needle   string
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"", args{"hello", "ll"}, 2},
+		{"", args{"aaaaa", "bba"}, -1},
+		{"", args{"", ""}, 0},
+		{"", args{"aaa", "aaaa"}, -1},
+		{"", args{"mississippi", "issipi"}, -1},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := strStr(tt.args.haystack, tt.args.needle); got != tt.want {
+				t.Errorf("strStr() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }

@@ -1,12 +1,27 @@
 package problem100
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func TestIsPalindrome(t *testing.T) {
-	assert.True(t, isPalindrome(121))
-	assert.False(t, isPalindrome(-121))
-	assert.False(t, isPalindrome(10))
+func Test_isPalindrome(t *testing.T) {
+	type args struct {
+		x int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{"", args{121}, true},
+		{"", args{-121}, false},
+		{"", args{10}, false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isPalindrome(tt.args.x); got != tt.want {
+				t.Errorf("isPalindrome() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
