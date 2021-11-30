@@ -14,12 +14,6 @@ https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
  * }
  */
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func inorderTraversal(root *TreeNode) []int {
 	result := []int{}
 	if root == nil {
