@@ -1,10 +1,13 @@
 package problem100
 
-import "testing"
+import (
+	"leetcode/data_struct"
+	"testing"
+)
 
 func Test_hasPathSum(t *testing.T) {
 	type args struct {
-		root      *TreeNode
+		root      *data_struct.TreeNode
 		targetSum int
 	}
 	tests := []struct {
@@ -15,14 +18,14 @@ func Test_hasPathSum(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
+				root: &data_struct.TreeNode{
 					Val: 1,
-					Left: &TreeNode{
+					Left: &data_struct.TreeNode{
 						Val:   2,
 						Left:  nil,
 						Right: nil,
 					},
-					Right: &TreeNode{
+					Right: &data_struct.TreeNode{
 						Val:   3,
 						Left:  nil,
 						Right: nil,
@@ -43,18 +46,18 @@ func Test_hasPathSum(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
+				root: &data_struct.TreeNode{
 					Val: 5,
-					Left: &TreeNode{
+					Left: &data_struct.TreeNode{
 						Val: 4,
-						Left: &TreeNode{
+						Left: &data_struct.TreeNode{
 							Val: 11,
-							Left: &TreeNode{
+							Left: &data_struct.TreeNode{
 								Val:   7,
 								Left:  nil,
 								Right: nil,
 							},
-							Right: &TreeNode{
+							Right: &data_struct.TreeNode{
 								Val:   2,
 								Left:  nil,
 								Right: nil,
@@ -62,17 +65,17 @@ func Test_hasPathSum(t *testing.T) {
 						},
 						Right: nil,
 					},
-					Right: &TreeNode{
+					Right: &data_struct.TreeNode{
 						Val: 8,
-						Left: &TreeNode{
+						Left: &data_struct.TreeNode{
 							Val:   13,
 							Left:  nil,
 							Right: nil,
 						},
-						Right: &TreeNode{
+						Right: &data_struct.TreeNode{
 							Val:  4,
 							Left: nil,
-							Right: &TreeNode{
+							Right: &data_struct.TreeNode{
 								Val:   1,
 								Left:  nil,
 								Right: nil,

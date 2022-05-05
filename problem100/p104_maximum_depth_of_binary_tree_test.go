@@ -1,6 +1,9 @@
 package problem100
 
-import "testing"
+import (
+	"leetcode/data_struct"
+	"testing"
+)
 
 /**
     3
@@ -13,7 +16,7 @@ retru 3
 */
 func Test_maxDepth(t *testing.T) {
 	type args struct {
-		root *TreeNode
+		root *data_struct.TreeNode
 	}
 	tests := []struct {
 		name string
@@ -21,20 +24,20 @@ func Test_maxDepth(t *testing.T) {
 		want int
 	}{
 		{"", args{
-			root: &TreeNode{Val: 3,
-				Left: &TreeNode{
+			root: &data_struct.TreeNode{Val: 3,
+				Left: &data_struct.TreeNode{
 					Val:   9,
 					Left:  nil,
 					Right: nil,
 				},
-				Right: &TreeNode{
+				Right: &data_struct.TreeNode{
 					Val: 20,
-					Left: &TreeNode{
+					Left: &data_struct.TreeNode{
 						Val:   15,
 						Left:  nil,
 						Right: nil,
 					},
-					Right: &TreeNode{
+					Right: &data_struct.TreeNode{
 						Val:   7,
 						Left:  nil,
 						Right: nil},

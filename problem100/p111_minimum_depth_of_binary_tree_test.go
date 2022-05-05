@@ -1,6 +1,9 @@
 package problem100
 
-import "testing"
+import (
+	"leetcode/data_struct"
+	"testing"
+)
 
 /**
 示例 1：
@@ -27,43 +30,43 @@ import "testing"
 */
 func Test_minDepth(t *testing.T) {
 	type args struct {
-		root *TreeNode
+		root *data_struct.TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
 		want int
 	}{
-		{"", args{&TreeNode{
+		{"", args{&data_struct.TreeNode{
 			Val: 3,
-			Left: &TreeNode{
+			Left: &data_struct.TreeNode{
 				Val:   9,
 				Left:  nil,
 				Right: nil,
 			},
-			Right: &TreeNode{
+			Right: &data_struct.TreeNode{
 				Val: 20,
-				Left: &TreeNode{
+				Left: &data_struct.TreeNode{
 					Val:   15,
 					Left:  nil,
 					Right: nil,
 				},
-				Right: &TreeNode{
+				Right: &data_struct.TreeNode{
 					Val:   7,
 					Left:  nil,
 					Right: nil,
 				},
 			},
 		}}, 2},
-		{"", args{&TreeNode{
+		{"", args{&data_struct.TreeNode{
 			Val: 2,
-			Left: &TreeNode{
+			Left: &data_struct.TreeNode{
 				Val: 3,
-				Left: &TreeNode{
+				Left: &data_struct.TreeNode{
 					Val: 4,
-					Left: &TreeNode{
+					Left: &data_struct.TreeNode{
 						Val: 5,
-						Left: &TreeNode{
+						Left: &data_struct.TreeNode{
 							Val:   6,
 							Left:  nil,
 							Right: nil,

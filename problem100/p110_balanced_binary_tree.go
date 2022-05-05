@@ -1,6 +1,9 @@
 package problem100
 
-import "math"
+import (
+	"leetcode/data_struct"
+	"math"
+)
 
 /**
 110. 平衡二叉树
@@ -28,7 +31,7 @@ import "math"
  *     Right *TreeNode
  * }
 */
-func isBalanced(root *TreeNode) bool {
+func isBalanced(root *data_struct.TreeNode) bool {
 	if root == nil {
 		return true
 	}
@@ -36,7 +39,7 @@ func isBalanced(root *TreeNode) bool {
 	return isBalanced
 }
 
-func maxTreeDepth(root *TreeNode) (int, bool) {
+func maxTreeDepth(root *data_struct.TreeNode) (int, bool) {
 	//递归实现
 	if root == nil {
 		return 0, true

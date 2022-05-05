@@ -1,5 +1,7 @@
 package problem100
 
+import "leetcode/data_struct"
+
 /**
 给定一个二叉树，找出其最大深度。
 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
@@ -23,7 +25,7 @@ package problem100
  *     Right *TreeNode
  * }
 */
-func maxDepth(root *TreeNode) int {
+func maxDepth(root *data_struct.TreeNode) int {
 	//递归实现
 	if root == nil {
 		return 0

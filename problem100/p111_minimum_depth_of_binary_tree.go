@@ -1,5 +1,7 @@
 package problem100
 
+import "leetcode/data_struct"
+
 /**
 111. 二叉树的最小深度
 给定一个二叉树，找出其最小深度。
@@ -19,7 +21,7 @@ package problem100
  *     Right *TreeNode
  * }
 */
-func minDepth(root *TreeNode) int {
+func minDepth(root *data_struct.TreeNode) int {
 	//关键在于理解：当前节点左右子节点都为空时才是叶子节点
 	if root == nil {
 		return 0
