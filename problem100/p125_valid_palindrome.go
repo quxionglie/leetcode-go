@@ -1,7 +1,6 @@
 package problem100
 
 import (
-	"regexp"
 	"strings"
 )
 
@@ -19,38 +18,34 @@ import (
 输入: "race a car"
 输出: false
 解释："raceacar" 不是回文串
+
+提示：
+1 <= s.length <= 2 * 105
+字符串 s 由 ASCII 字符组成
 */
 func isPalindrome(s string) bool {
-	reg, err := regexp.Compile("[0-9a-zA-Z]")
-	if err != nil {
-		return false
-	}
+	s = strings.ToLower(s)
 	left := 0
+	right := len(s) - 1
 
-	runeStr := []rune(s)
-	right := len(runeStr) - 1
-
-	for _, c := range s {
-		leftStr := string(c)
-		if !reg.MatchString(leftStr) {
-			continue
+	for left < right {
+		for left < right && !isStrOk(s[left]) {
+			left++
 		}
-
-		rightStr := string(runeStr[right])
-		for !reg.MatchString(rightStr) {
+		for left < right && !isStrOk(s[right]) {
 			right--
-			rightStr = string(runeStr[right])
 		}
-
-		if left+right >= len(runeStr) || left >= right {
-			break
+		if left < right {
+			if s[left] != s[right] {
+				return false
+			}
+			left++
+			right--
 		}
-		if !strings.EqualFold(leftStr, rightStr) {
-			return false
-		}
-		left++
-		right--
 	}
-
 	return true
+}
+
+func isStrOk(ch byte) bool {
+	return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')
 }

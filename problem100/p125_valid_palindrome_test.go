@@ -7,7 +7,8 @@ import (
 
 func Test_isPalindrome(t *testing.T) {
 	str := "Go爱好者"
-	fmt.Printf("11=%s, \n", string([]rune(str)[2]))
+	fmt.Printf("11=%d, \n", len([]rune(str)))
+	fmt.Printf("22=%d, \n", len(str))
 
 	//for _, c := range str {
 	//	fmt.Printf("%s,", string(c))
