@@ -1,7 +1,5 @@
 package problem100
 
-import "leetcode/data_struct"
-
 /**
 112. 路径总和
 
@@ -16,7 +14,7 @@ import "leetcode/data_struct"
  *     Right *TreeNode
  * }
 */
-func hasPathSum(root *data_struct.TreeNode, targetSum int) bool {
+func hasPathSum(root *TreeNode, targetSum int) bool {
 	if root == nil {
 		return false
 	}

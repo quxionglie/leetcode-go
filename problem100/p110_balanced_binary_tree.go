@@ -1,7 +1,6 @@
 package problem100
 
 import (
-	"leetcode/data_struct"
 	"math"
 )
 
@@ -31,7 +30,7 @@ import (
  *     Right *TreeNode
  * }
 */
-func isBalanced(root *data_struct.TreeNode) bool {
+func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
@@ -39,7 +38,7 @@ func isBalanced(root *data_struct.TreeNode) bool {
 	return isBalanced
 }
 
-func maxTreeDepth(root *data_struct.TreeNode) (int, bool) {
+func maxTreeDepth(root *TreeNode) (int, bool) {
 	//递归实现
 	if root == nil {
 		return 0, true

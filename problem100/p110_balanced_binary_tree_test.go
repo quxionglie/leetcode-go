@@ -1,47 +1,46 @@
 package problem100
 
 import (
-	"leetcode/data_struct"
 	"testing"
 )
 
 func Test_isBalanced(t *testing.T) {
 	type args struct {
-		root *data_struct.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
 		want bool
 	}{
-		{"", args{&data_struct.TreeNode{
+		{"", args{&TreeNode{
 			Val: 3,
-			Left: &data_struct.TreeNode{
+			Left: &TreeNode{
 				Val:   9,
 				Left:  nil,
 				Right: nil,
 			},
-			Right: &data_struct.TreeNode{
+			Right: &TreeNode{
 				Val: 20,
-				Left: &data_struct.TreeNode{
+				Left: &TreeNode{
 					Val:   15,
 					Left:  nil,
 					Right: nil,
 				},
-				Right: &data_struct.TreeNode{
+				Right: &TreeNode{
 					Val:   7,
 					Left:  nil,
 					Right: nil,
 				},
 			},
 		}}, true}, //[3,9,20,null,null,15,7]
-		{"", args{&data_struct.TreeNode{
+		{"", args{&TreeNode{
 			Val: 1,
-			Left: &data_struct.TreeNode{
+			Left: &TreeNode{
 				Val: 2,
-				Left: &data_struct.TreeNode{
+				Left: &TreeNode{
 					Val: 3,
-					Left: &data_struct.TreeNode{
+					Left: &TreeNode{
 						Val:   4,
 						Left:  nil,
 						Right: nil,
@@ -50,13 +49,13 @@ func Test_isBalanced(t *testing.T) {
 				},
 				Right: nil,
 			},
-			Right: &data_struct.TreeNode{
+			Right: &TreeNode{
 				Val:  2,
 				Left: nil,
-				Right: &data_struct.TreeNode{
+				Right: &TreeNode{
 					Val:  3,
 					Left: nil,
-					Right: &data_struct.TreeNode{
+					Right: &TreeNode{
 						Val:   4,
 						Left:  nil,
 						Right: nil,

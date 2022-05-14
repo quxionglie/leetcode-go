@@ -1,14 +1,13 @@
 package problem000
 
 import (
-	"leetcode/data_struct"
 	"reflect"
 	"testing"
 )
 
 func Test_inorderTraversal(t *testing.T) {
 	type args struct {
-		root *data_struct.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string

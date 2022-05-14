@@ -1,7 +1,5 @@
 package problem100
 
-import "leetcode/data_struct"
-
 /**
 100. 相同的树
 给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
@@ -17,7 +15,7 @@ import "leetcode/data_struct"
  * }
  */
 // 方法1：递归
-func isSameTree(p *data_struct.TreeNode, q *data_struct.TreeNode) bool {
+func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
 		return true
 	}

@@ -1,7 +1,5 @@
 package problem100
 
-import "leetcode/data_struct"
-
 /**
 108. 将有序数组转换为二叉搜索树
 给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
@@ -17,19 +15,19 @@ import "leetcode/data_struct"
  *     Right *TreeNode
  * }
 */
-func sortedArrayToBST(nums []int) *data_struct.TreeNode {
+func sortedArrayToBST(nums []int) *TreeNode {
 
 	return doBuildBst(nums, 0, len(nums)-1)
 }
 
-func doBuildBst(nums []int, left, right int) *data_struct.TreeNode {
+func doBuildBst(nums []int, left, right int) *TreeNode {
 
 	if left > right {
 		return nil
 	}
 	//中序遍历，总是选择中间位置左边的数字作为根节点
 	mid := (left + right) / 2
-	root := &data_struct.TreeNode{Val: nums[mid]}
+	root := &TreeNode{Val: nums[mid]}
 	root.Left = doBuildBst(nums, left, mid-1)
 	root.Right = doBuildBst(nums, mid+1, right)
 	return root
