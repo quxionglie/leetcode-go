@@ -7,7 +7,7 @@ package problem100
 题目数据 保证 整个链式结构中不存在环。
 注意，函数返回结果后，链表必须 保持其原始结构 。
 a1->a2->a3->a4
-b1->b2->a3->a4
+b1->a3->a4
 return a3
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -16,18 +16,21 @@ return a3
  * }
 */
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
-	aMap := make(map[*ListNode]bool)
-
+	//pa:  a1->a2->a3->a4 -> b1->a3->a4
+	//pb:  b1->a3->a4 -> a1->a2->a3->a4
 	pa, pb := headA, headB
-	for pa != nil {
-		aMap[pa] = true
-		pa = pa.Next
-	}
-	for pb != nil {
-		if _, ok := aMap[pb]; ok {
-			return pb
+	for pa != pb {
+		if pa == nil {
+			pa = headB
+		} else {
+			pa = pa.Next
 		}
-		pb = pb.Next
+
+		if pb == nil {
+			pb = headA
+		} else {
+			pb = pb.Next
+		}
 	}
-	return nil
+	return pa
 }
