@@ -27,6 +27,7 @@ nums.length == 2 * n
 -10^4 <= nums[i] <= 10^4
 */
 func arrayPairSum(nums []int) int {
+	// 每次选择都想选个大的，但是最大的不能选（因为 min），所以每次选第二大的。
 	sort.Ints(nums)
 	ans := 0
 	for i := 0; i < len(nums); i += 2 {
