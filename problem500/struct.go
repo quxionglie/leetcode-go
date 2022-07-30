@@ -11,6 +11,11 @@ type ListNode struct {
 	Next *ListNode
 }
 
+type Node struct {
+	Val      int
+	Children []*Node
+}
+
 func isLinkListEq(n1, n2 *ListNode) bool {
 	for n1 != nil || n2 != nil {
 		if (n1 == nil && n2 != nil) || (n1 != nil && n2 == nil) {

@@ -12,27 +12,16 @@ N 叉树输入按层序遍历序列化表示，每组子节点由空值分隔（
  *     Children []*Node
  * }
 */
-
-type Node struct {
-	Val      int
-	Children []*Node
-}
-
 func maxDepth(root *Node) int {
 	if root == nil {
 		return 0
 	}
 
-	left := doMaxDepth(root.Children) + 1
-	return left
-}
-func doMaxDepth(nodes []*Node) int {
-	var max int
-	for _, node := range nodes {
-		dep := maxDepth(node)
-		if dep > max {
-			max = dep
+	maxChildDepth := 0
+	for _, child := range root.Children {
+		if childDepth := maxDepth(child); childDepth > maxChildDepth {
+			maxChildDepth = childDepth
 		}
 	}
-	return max
+	return maxChildDepth + 1
 }
