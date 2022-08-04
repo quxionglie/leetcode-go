@@ -19,10 +19,8 @@ func preorder(root *Node) []int {
 	if root != nil {
 		result = append(result, root.Val)
 	}
-	if len(root.Children) > 0 {
-		for _, child := range root.Children {
-			result = append(result, preorder(child)...)
-		}
+	for _, child := range root.Children {
+		result = append(result, preorder(child)...)
 	}
 
 	return result
