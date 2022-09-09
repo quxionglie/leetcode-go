@@ -1,0 +1,32 @@
+package problem000
+
+import (
+	"reflect"
+	"testing"
+)
+
+func Test_threeSum(t *testing.T) {
+	type args struct {
+		nums []int
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantAns [][]int
+	}{
+		{
+			name: "",
+			args: args{
+				nums: []int{-1, 0, 1, 2, -1, -4},
+			},
+			wantAns: [][]int{{-1, -1, 2}, {-1, 0, 1}},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if gotAns := threeSum(tt.args.nums); !reflect.DeepEqual(gotAns, tt.wantAns) {
+				t.Errorf("threeSum() = %v, want %v", gotAns, tt.wantAns)
+			}
+		})
+	}
+}
