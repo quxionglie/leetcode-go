@@ -1,7 +1,5 @@
 package problem000
 
-var combinations []string
-
 /*
 *
 17. 电话号码的字母组合
@@ -24,6 +22,9 @@ var combinations []string
 0 <= digits.length <= 4
 digits[i] 是范围 ['2', '9'] 的一个数字。
 */
+
+var combinations []string
+
 func letterCombinations(digits string) []string {
 	if len(digits) == 0 {
 		return []string{}
