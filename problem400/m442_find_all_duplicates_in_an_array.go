@@ -21,6 +21,7 @@ package problem400
 输出：[]
 */
 func findDuplicates(nums []int) (ans []int) {
+	//方法二：使用正负号作为标记
 	for _, x := range nums {
 		if x < 0 {
 			x = -x
