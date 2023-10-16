@@ -33,7 +33,7 @@ func Test_findDuplicates(t *testing.T) {
 			args: args{
 				nums: []int{1},
 			},
-			want: []int{},
+			want: nil,
 		},
 	}
 	for _, tt := range tests {

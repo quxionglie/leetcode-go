@@ -24,7 +24,7 @@ func Test_subarraySum(t *testing.T) {
 			name: "",
 			args: args{
 				nums: []int{1, 2, 3},
-				k:    2,
+				k:    3,
 			},
 			want: 2,
 		},

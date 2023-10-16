@@ -67,9 +67,9 @@ func Test_pathSum(t *testing.T) {
 			name: "",
 			args: args{
 				root: &TreeNode{
-					Val: 2,
+					Val: 1,
 					Left: &TreeNode{
-						Val:   1,
+						Val:   2,
 						Left:  nil,
 						Right: nil,
 					},
@@ -81,14 +81,14 @@ func Test_pathSum(t *testing.T) {
 				},
 				targetSum: 5,
 			},
-			wantAns: [][]int{},
+			wantAns: nil,
 		},
 		{
 			name: "",
 			args: args{
 				root: &TreeNode{
 					Val: 1,
-					Right: &TreeNode{
+					Left: &TreeNode{
 						Val:   2,
 						Left:  nil,
 						Right: nil,
@@ -96,12 +96,13 @@ func Test_pathSum(t *testing.T) {
 				},
 				targetSum: 0,
 			},
-			wantAns: [][]int{},
+			wantAns: nil,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if gotAns := pathSum(tt.args.root, tt.args.targetSum); !reflect.DeepEqual(gotAns, tt.wantAns) {
+			gotAns := pathSum(tt.args.root, tt.args.targetSum)
+			if !reflect.DeepEqual(gotAns, tt.wantAns) {
 				t.Errorf("pathSum() = %v, want %v", gotAns, tt.wantAns)
 			}
 		})

@@ -6,13 +6,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func max(x, y int) int {
-	if x < y {
-		return y
-	}
-	return x
-}
-
 type ListNode struct {
 	Val  int
 	Next *ListNode

@@ -52,10 +52,3 @@ func createLinkList(nums []int) *ListNode {
 	}
 	return head
 }
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}

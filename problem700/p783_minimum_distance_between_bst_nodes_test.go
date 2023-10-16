@@ -12,7 +12,7 @@ func Test_minDiffInBST(t *testing.T) {
 		want int
 	}{
 		{
-			name: "11",
+			name: "",
 			args: args{
 				root: &TreeNode{
 					Val: 4,
@@ -39,36 +39,31 @@ func Test_minDiffInBST(t *testing.T) {
 			want: 1,
 		},
 		{
-			//[90,69,null,49,89,null,52]
-			//	90
-			// 69
-			//49   89
-			//	  52
-			name: "22",
+			name: "",
 			args: args{
 				root: &TreeNode{
-					Val: 90,
+					Val: 1,
 					Left: &TreeNode{
-						Val: 69,
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val: 48,
 						Left: &TreeNode{
-							Val:  49,
-							Left: nil,
-							Right: &TreeNode{
-								Val:   52,
-								Left:  nil,
-								Right: nil,
-							},
+							Val:   12,
+							Left:  nil,
+							Right: nil,
 						},
 						Right: &TreeNode{
-							Val:   89,
+							Val:   49,
 							Left:  nil,
 							Right: nil,
 						},
 					},
-					Right: nil,
 				},
 			},
-			want: 3,
+			want: 1,
 		},
 	}
 	for _, tt := range tests {

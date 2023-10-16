@@ -40,10 +40,3 @@ func total(nums []int, start, end int, turn int) int {
 	scoreEnd := nums[end]*turn + total(nums, start, end-1, -turn)
 	return max(scoreStart*turn, scoreEnd*turn) * turn
 }
-
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}

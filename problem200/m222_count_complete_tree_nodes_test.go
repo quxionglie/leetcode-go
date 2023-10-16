@@ -14,7 +14,7 @@ func Test_countNodes(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{},
+				root: nil,
 			},
 			want: 0,
 		},

@@ -23,7 +23,7 @@ func Test_change(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				amount: 2,
+				amount: 3,
 				coins:  []int{2},
 			},
 			want: 0,

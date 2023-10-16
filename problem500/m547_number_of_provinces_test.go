@@ -31,7 +31,7 @@ func Test_findCircleNum(t *testing.T) {
 					{0, 0, 1},
 				},
 			},
-			want: 2,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {

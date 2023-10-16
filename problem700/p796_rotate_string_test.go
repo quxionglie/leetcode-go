@@ -26,7 +26,7 @@ func Test_rotateString(t *testing.T) {
 				s:    "abcde",
 				goal: "abced",
 			},
-			want: true,
+			want: false,
 		},
 	}
 	for _, tt := range tests {

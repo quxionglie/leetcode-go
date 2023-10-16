@@ -27,7 +27,7 @@ func Test_partition(t *testing.T) {
 			name: "",
 			args: args{
 				head: createLinkList([]int{2, 1}),
-				x:    3,
+				x:    2,
 			},
 			want: createLinkList([]int{1, 2}),
 		},

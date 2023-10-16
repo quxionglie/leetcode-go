@@ -24,7 +24,7 @@ func Test_sumOfLeftLeaves(t *testing.T) {
 					Right: &TreeNode{
 						Val: 20,
 						Left: &TreeNode{
-							Val:   5,
+							Val:   15,
 							Left:  nil,
 							Right: nil,
 						},

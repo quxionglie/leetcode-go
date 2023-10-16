@@ -23,7 +23,7 @@ func Test_pivotIndex(t *testing.T) {
 		}, {
 			name: "",
 			args: args{[]int{2, 1, -1}},
-			want: 2,
+			want: 0,
 		},
 	}
 	for _, tt := range tests {
